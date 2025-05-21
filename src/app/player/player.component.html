@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+          <h4 class="mb-0">Video Player</h4>
+          <button class="btn btn-outline-danger" (click)="onLogout()">Logout</button>
+        </div>
+        <div class="card-body">
+          <!-- Video Player -->
+          <div class="ratio ratio-16x9 mb-3">
+            <video controls>
+              <source [src]="videoUrl" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <!-- Video Description -->
+          <div class="mt-4">
+            <h5>Big Buck Bunny</h5>
+            <p class="text-muted">
+              This is a sample video player for demonstration purposes. Only authenticated users
+              can access this page due to the authentication guard we've implemented.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

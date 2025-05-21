@@ -1,0 +1,92 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Crear Cuenta</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <!-- Alert for registration errors -->
+            <div *ngIf="registrationError" class="alert alert-danger">
+              Error al registrar la cuenta. Por favor intente nuevamente.
+            </div>
+
+            <!-- Nombre -->
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                formControlName="nombre"
+                placeholder="Ingrese su nombre"
+              >
+              <div *ngIf="submitted && f['nombre'].errors" class="text-danger">
+                <small *ngIf="f['nombre'].errors['required']">Nombre es requerido</small>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                formControlName="email"
+                placeholder="nombre@ejemplo.com"
+              >
+              <div *ngIf="submitted && f['email'].errors" class="text-danger">
+                <small *ngIf="f['email'].errors['required']">Email es requerido</small>
+                <small *ngIf="f['email'].errors['email']">Email debe ser válido</small>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                formControlName="password"
+                placeholder="Contraseña"
+              >
+              <div *ngIf="submitted && f['password'].errors" class="text-danger">
+                <small *ngIf="f['password'].errors['required']">Contraseña es requerida</small>
+                <small *ngIf="f['password'].errors['minlength']">Contraseña debe tener al menos 6 caracteres</small>
+              </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+              <input
+                type="password"
+                class="form-control"
+                id="confirmPassword"
+                formControlName="confirmPassword"
+                placeholder="Confirmar Contraseña"
+              >
+              <div *ngIf="submitted && f['confirmPassword'].errors" class="text-danger">
+                <small *ngIf="f['confirmPassword'].errors['required']">Confirmación de contraseña es requerida</small>
+                <small *ngIf="f['confirmPassword'].errors['matching']">Las contraseñas no coinciden</small>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary">Registrarse</button>
+            </div>
+
+            <!-- Link to Login -->
+            <div class="mt-3 text-center">
+              <p>¿Ya tienes una cuenta? <a routerLink="/login">Iniciar Sesión</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

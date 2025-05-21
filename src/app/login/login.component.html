@@ -1,0 +1,60 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Iniciar Sesión</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <!-- Alert for login errors -->
+            <div *ngIf="loginError" class="alert alert-danger">
+              Error de inicio de sesión. Por favor verifique sus credenciales.
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                formControlName="email"
+                placeholder="nombre@ejemplo.com"
+              >
+              <div *ngIf="submitted && f['email'].errors" class="text-danger">
+                <small *ngIf="f['email'].errors['required']">Email es requerido</small>
+                <small *ngIf="f['email'].errors['email']">Email debe ser válido</small>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                formControlName="password"
+                placeholder="Contraseña"
+              >
+              <div *ngIf="submitted && f['password'].errors" class="text-danger">
+                <small *ngIf="f['password'].errors['required']">Contraseña es requerida</small>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            </div>
+
+            <!-- Link to Registration -->
+            <div class="mt-3 text-center">
+              <p>¿No tienes una cuenta? <a routerLink="/register">Crear Cuenta</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,59 +1,78 @@
-# Prueba-Zapping
+# Prueba Técnica Zapping - Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.13.
+Este proyecto fue creado como parte de una prueba técnica para Zapping. Es una aplicación frontend desarrollada con Angular que implementa un sistema de autenticación y un reproductor de video protegido.
 
-## Development server
+## Características
 
-To start a local development server, run:
+- Página de inicio de sesión
+- Página de registro de usuarios
+- Reproductor de video protegido (solo accesible para usuarios autenticados)
+- Diseño responsivo con Bootstrap
+- Validación de formularios
+- Guardias de autenticación para rutas protegidas
+
+## Requisitos
+
+Para ejecutar este proyecto necesitas tener instalado:
+
+- Node.js (v18.0.0 o superior)
+- npm (v8.0.0 o superior)
+- Angular CLI (v19.0.0)
+- Un navegador web moderno (Chrome, Firefox, Edge, etc.)
+
+## Instalación
+
+Sigue estos pasos para instalar y configurar el proyecto:
+
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/tu-usuario/prueba-zapping.git
+cd prueba-zapping
+```
+
+2. Instala las dependencias:
+
+```bash
+npm install
+```
+
+## Ejecución del servidor de desarrollo
+
+Para iniciar el servidor de desarrollo:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Luego, abre tu navegador y ve a `http://localhost:4200/`.
 
-## Code scaffolding
+La aplicación se recargará automáticamente si cambias alguno de los archivos fuente.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Estructura del proyecto
 
-```bash
-ng generate component component-name
-```
+El proyecto contiene los siguientes componentes principales:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **LoginComponent**: Formulario de inicio de sesión
+- **RegistrationComponent**: Formulario de registro de usuarios
+- **PlayerComponent**: Reproductor de video (protegido por AuthGuard)
+- **AuthService**: Servicio para manejar la autenticación
+- **AuthGuard**: Guardia para proteger rutas que requieren autenticación
 
-```bash
-ng generate --help
-```
+## Uso
 
-## Building
+1. Al abrir la aplicación, serás dirigido a la página de inicio de sesión.
+2. Puedes iniciar sesión con cualquier email y contraseña (implementación de prueba).
+3. También puedes crear una nueva cuenta en la página de registro.
+4. Una vez autenticado, serás redirigido al reproductor de video.
+5. El reproductor tiene un botón para cerrar sesión y volver a la página de inicio.
 
-To build the project run:
+## Notas adicionales
 
-```bash
-ng build
-```
+- Este es un proyecto de prueba y no se conecta a un backend real.
+- La autenticación es simulada y almacenada en localStorage.
+- Para una implementación real, se necesitaría conectar con una API de backend.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Desarrollado con Angular 19 y Bootstrap 5.
